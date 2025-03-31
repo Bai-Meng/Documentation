@@ -188,7 +188,7 @@ $ docker pull nginx:latest
 $ mkdir -p /opt/nginx/{conf.d,logs,web}
 $ vim /opt/nginx/nginx.conf
 $ mkdir -p /opt/nginx/conf.d/ssl-cert
-$ docker run -it -p 80:80 -p 443:443 --name nginx \
+$ docker run -it --restart=always -p 80:80 -p 443:443 --name nginx \
 -v /opt/nginx/nginx.conf:/etc/nginx/nginx.conf \
 -v /opt/nginx/conf.d:/etc/nginx/conf.d \
 -v /opt/nginx/web:/opt/nginx/web \
